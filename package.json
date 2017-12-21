@@ -2,7 +2,7 @@
   "name": "electron-boilerplate",
   "productName": "Electron Boilerplate",
   "description": "Starter for your Electron application",
-  "version": "v0.0.1",
+  "version": "0.0.1",
   "private": true,
   "author": "Mr. Gumby <mr.gumby@example.com>",
   "copyright": "© 2017, Gumby inc.",
@@ -31,8 +31,7 @@
       "target": "AppImage",
       "category": "Development",
       "publish": ["github"]
-    },
-    "publish": null
+    }
   },
   "scripts": {
     "postinstall": "install-app-deps",
