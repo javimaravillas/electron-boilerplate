@@ -9,19 +9,32 @@
   "homepage": "http://example.com",
   "main": "app/background.js",
   "build": {
-    "appId": "com.example.electron-boilerplate",
+    "appId": "com.electron-boilerplate",
+    "productName":"Electron Boilerplate",
+    "copyright": "Copyright © year Javier Franco",
+    "directories": {
+      "output": "dist"
+    },
     "files": [
       "app/**/*",
       "node_modules/**/*",
-      "package.json"
+      "package.json",
+      "dist/",
+      "config",
+      "resources/**/*"
     ],
-    "directories": {
-      "buildResources": "resources"
+    "mac": {
+      "category": "public.app-category.electron-boilerplate",
+      "publish": ["github"]
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Development"
     },
     "publish": null
   },
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "install-app-deps",
     "preunit": "webpack --config=build/webpack.unit.config.js --env=test --display=none",
     "unit": "electron-mocha temp/specs.js --renderer --require source-map-support/register",
     "pree2e": "webpack --config=build/webpack.app.config.js --env=test --display=none && webpack --config=build/webpack.e2e.config.js --env=test --display=none",
