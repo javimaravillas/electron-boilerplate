@@ -29,7 +29,8 @@
     },
     "linux": {
       "target": "AppImage",
-      "category": "Development"
+      "category": "Development",
+      "publish": ["github"]
     },
     "publish": null
   },
