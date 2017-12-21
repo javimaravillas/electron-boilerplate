@@ -42,5 +42,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start &
   - sleep 3
 
+
 script:
-  - npm run release
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then npm run release fi
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then npm run build fi
