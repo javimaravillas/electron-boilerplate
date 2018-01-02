@@ -26,6 +26,8 @@ deploy:
 
     # Deploy to GitHub Releases
   - provider: GitHub
+    auth_token:
+        secure: z6QVtKZSnM4U7sM4A95vSIkNJUPracKJo9hkoIZcDzDlszFRM5GBlMhYEaPs+bSJ
     artifact: dist\*.*         # upload all NuGet packages to release assets
     draft: false
     prerelease: false
