@@ -10,7 +10,7 @@
   "main": "app/background.js",
   "build": {
     "appId": "com.electron-boilerplate",
-    "productName":"Electron Boilerplate",
+    "productName": "Electron Boilerplate",
     "copyright": "Copyright © year Javier Franco",
     "directories": {
       "output": "dist"
@@ -25,12 +25,16 @@
     ],
     "mac": {
       "category": "public.app-category.electron-boilerplate",
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     },
     "linux": {
       "target": "AppImage",
       "category": "Development",
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     }
   },
   "scripts": {
