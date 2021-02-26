@@ -19,4 +19,44 @@ version: '{build}'
 shallow_clone: true
 clone_depth: 1
 test_script:
-  - npm run unit
+  - npm run build
+# providers: Local, FTP, WebDeploy, AzureCS, AzureBlob, S3, NuGet, Environment
+# provider names are case-sensitive!
+deploy:
+
+    # Deploy to GitHub Releases
+  - provider: GitHub
+    artifact: dist\*.*         # upload all NuGet packages to release assets
+    draft: false
+    prerelease: false
+    on:
+      branch: master                # release from master branch only
+      appveyor_repo_tag: true       # deploy on tag push only
+
+## scripts to run before deployment
+#before_deploy:
+#
+## scripts to run after deployment
+#after_deploy:
+#
+## to run your custom scripts instead of provider deployments
+#deploy_script:
+
+# to disable deployment
+#deploy: off
+
+#---------------------------------#
+#        global handlers          #
+#---------------------------------#
+
+# on successful build
+on_success:
+  - echo success
+
+# on build failure
+on_failure:
+  - echo failure
+
+# after build failure or success
+on_finish:
+  - echo finished
